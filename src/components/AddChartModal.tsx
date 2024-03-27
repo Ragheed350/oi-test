@@ -14,7 +14,6 @@ export default function AddChartModal({ closeModal, addChart }: Props) {
     labels,
     datasets,
     dataSource,
-
     handleChange,
     handleChangeChartType,
     handleAddLabel,
@@ -69,7 +68,7 @@ export default function AddChartModal({ closeModal, addChart }: Props) {
                 ))}
               </ul>
               <label>Datasets:</label>
-              <div>
+              <div className="datasets">
                 <input type="text" name="datasetLabel" value={data.datasetLabel} onChange={handleChange} placeholder="Label" />
                 <input
                   type="text"
@@ -78,8 +77,8 @@ export default function AddChartModal({ closeModal, addChart }: Props) {
                   onChange={handleChange}
                   placeholder="Data (comma-separated)"
                 />
-                <button onClick={handleAddDataset}>Add Dataset</button>
               </div>
+              <button onClick={handleAddDataset}>Add Dataset</button>
               <ul>
                 {datasets.map((dataset, index) => (
                   <li key={index}>
@@ -91,11 +90,32 @@ export default function AddChartModal({ closeModal, addChart }: Props) {
           ) : null}
           <div className="appearance">
             <h4>Appearance</h4>
-            <label>Background Color:</label>
-            <input type="color" name="bgColor" onChange={handleChange} />
 
-            <label>Border Color:</label>
-            <input type="color" name="borderColor" onChange={handleChange} />
+            {["line", "bar"].includes(chartType) && (
+              <div className="axis">
+                <label>
+                  Yaxis Label:
+                  <input type="text" name="xTitle" onChange={handleChange} />
+                </label>
+
+                <label>
+                  Xaxis Label:
+                  <input type="text" name="yTitle" onChange={handleChange} />
+                </label>
+              </div>
+            )}
+
+            <div className="colors">
+              <label>
+                Background Color:
+                <input type="color" name="bgColor" onChange={handleChange} />
+              </label>
+
+              <label>
+                Border Color:
+                <input type="color" name="borderColor" onChange={handleChange} />
+              </label>
+            </div>
           </div>
           <div className="actions">
             <button onClick={handleConfirm}>Confirm</button>

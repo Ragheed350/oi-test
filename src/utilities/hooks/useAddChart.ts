@@ -82,14 +82,14 @@ export default function useAddChart({ addChart, closeModal }: Props) {
           display: true,
           title: {
             display: true,
-            text: "Month",
+            text: data.xTitle,
           },
         },
         y: {
           display: true,
           title: {
             display: true,
-            text: "Value",
+            text: data.yTitle,
           },
         },
       },

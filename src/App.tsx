@@ -12,6 +12,7 @@ function App() {
   const addChart = (chartConfig: DynamicChartConfig) => {
     const canvas = document.createElement("canvas")
     const div = document.createElement("div")
+    div.setAttribute("class", "chart-card")
 
     div.appendChild(canvas)
     document.getElementById("charts-container")?.appendChild(div)

@@ -134,3 +134,25 @@ input:hover {
     }
   }
 }
+
+.chart-card {
+  width: 500px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.datasets {
+  display: flex;
+  gap: 10px;
+}
+
+.appearance {
+  .axis,
+  .colors {
+    display: flex;
+    gap: 10px;
+    label {
+      width: 100%;
+    }
+  }
+}
