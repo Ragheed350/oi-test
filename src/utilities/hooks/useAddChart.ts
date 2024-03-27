@@ -1,5 +1,5 @@
-import { ChartData, ChartDataset, ChartOptions, ChartType } from "chart.js"
-import React, { useEffect, useState } from "react"
+import { ChartDataset, ChartOptions, ChartType } from "chart.js"
+import React, { useState } from "react"
 import { DynamicChartConfig, Series } from "../../types"
 import { API_KEY, chartTypes } from "../constants"
 import axios from "axios"
